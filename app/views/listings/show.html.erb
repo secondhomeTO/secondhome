@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @listing %>
+
+<div>
+  <% @listing.photo.each do |photo| %>
+    <%= image_tag(photo, :width => 200) %>
+  <% end %>
+</div>
+
+
+
+<div>
+  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
+  <%= link_to "Back to listings", listings_path %>
+
+  <%= button_to "Destroy this listing", @listing, method: :delete %>
+</div>
